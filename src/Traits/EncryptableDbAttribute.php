@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Crypt;
 
 /**
  * Trait EncryptableDbAttribute
- * @package BetterApp\LaravelDbEncrypter\Traits
+ * @package betterApp\LaravelDbEncrypter\Traits
  */
 trait EncryptableDbAttribute
 {
