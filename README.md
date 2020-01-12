@@ -1,0 +1,1 @@
+# laravel-db-encryptor
