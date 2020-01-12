@@ -1,11 +1,5 @@
 <?php
 
-/**
- * src/Traits/EncryptedDbAttribute.php.
- *
- * @author  DanielCzestki <https://betterapp.net/>
- */
-
 namespace betterapp\LaravelDbEncrypter\Traits;
 
 use Exception;
