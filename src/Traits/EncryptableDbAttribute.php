@@ -80,7 +80,7 @@ trait EncryptableDbAttribute
     {
         try {
             $value = Crypt::encrypt($value);
-        } catch (Exception $th) {}
+        } catch (Exception $e) {}
 
         return $value;
     }
@@ -94,7 +94,7 @@ trait EncryptableDbAttribute
     {
         try {
             $value = Crypt::decrypt($value);
-        } catch (Exception $th) {}
+        } catch (Exception $e) {}
 
         return $value;
     }
