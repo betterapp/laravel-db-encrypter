@@ -11,7 +11,7 @@ This package was created to encrypt and decrypt values of Eloquent model attribu
 ## Requirements
 
 * Laravel: 6.0 and up
-* PHP: 7.1 and never
+* PHP: 7.1 and newer
 
 #### Database schema
 
