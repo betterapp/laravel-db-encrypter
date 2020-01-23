@@ -24,12 +24,7 @@ trait EncryptableDbAttribute
             return $value;
         }
 
-        try {
-            $value = Crypt::decrypt($value);
-        } catch (Exception $th) {
-        }
-
-        return $value;
+        return $this->decrypt($value);
     }
 
     /**
