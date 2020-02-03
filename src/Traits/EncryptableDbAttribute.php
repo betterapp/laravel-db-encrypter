@@ -16,7 +16,7 @@ trait EncryptableDbAttribute
      *
      * @return mixed
      */
-    public function getAttribute(string $key)
+    public function getAttribute($key)
     {
         $value = parent::getAttribute($key);
 
@@ -33,7 +33,7 @@ trait EncryptableDbAttribute
      *
      * @return mixed
      */
-    public function setAttribute(string $key, $value)
+    public function setAttribute($key, $value)
     {
         if (!in_array($key, $this->encryptable)) {
             return parent::setAttribute($key, $value);
