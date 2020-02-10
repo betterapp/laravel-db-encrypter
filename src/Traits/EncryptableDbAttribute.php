@@ -71,7 +71,7 @@ trait EncryptableDbAttribute
      *
      * @return mixed
      */
-    private function encrypt($value): string
+    private function encrypt($value)
     {
         try {
             $value = Crypt::encrypt($value);
