@@ -35,7 +35,7 @@ trait EncryptableDbAttribute
      */
     public function setAttribute($key, $value)
     {
-        if (!in_array($key, $this->encryptable)) {
+        if (is_null($value) || !in_array($key, $this->encryptable)) {
             return parent::setAttribute($key, $value);
         }
 
@@ -85,7 +85,7 @@ trait EncryptableDbAttribute
      *
      * @return mixed
      */
-    private function decrypt($value): string
+    private function decrypt($value)
     {
         try {
             $value = Crypt::decrypt($value);
