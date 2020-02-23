@@ -53,5 +53,7 @@ For example:
     }
 ```
 
+3. You can use Laravel's original $casts to cast decrypted values
+
 ### License
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
