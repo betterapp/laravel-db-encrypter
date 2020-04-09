@@ -59,11 +59,9 @@ trait EncryptableDbAttribute
      */
     public function setAttribute($key, $value)
     {
-        if (is_null($value) || !in_array($key, $this->encryptable)) {
-            return parent::setAttribute($key, $value);
+        if (!empty($value) && in_array($key, $this->encryptable)) {
+            $value = $this->encrypt($value);
         }
-
-        $value = $this->encrypt($value);
 
         return parent::setAttribute($key, $value);
     }
@@ -111,7 +109,7 @@ trait EncryptableDbAttribute
     private function decryptAttributes(array $attributes): array
     {
         foreach ($attributes as $key => $value) {
-            if (!in_array($key, $this->encryptable) || is_null($value) || $value === '') {
+            if (!in_array($key, $this->encryptable) || empty($value)) {
                 continue;
             }
 
