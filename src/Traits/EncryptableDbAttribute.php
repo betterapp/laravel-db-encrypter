@@ -2,7 +2,8 @@
 
 namespace betterapp\LaravelDbEncrypter\Traits;
 
-use Exception;
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Contracts\Encryption\EncryptException;
 use Illuminate\Support\Facades\Crypt;
 
 /**
@@ -130,7 +131,7 @@ trait EncryptableDbAttribute
     {
         try {
             $value = Crypt::encrypt($value);
-        } catch (Exception $e) {}
+        } catch (EncryptException $e) {}
 
         return $value;
     }
@@ -144,7 +145,7 @@ trait EncryptableDbAttribute
     {
         try {
             $value = Crypt::decrypt($value);
-        } catch (Exception $e) {}
+        } catch (DecryptException $e) {}
 
         return $value;
     }
