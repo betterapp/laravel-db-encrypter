@@ -30,7 +30,7 @@ trait EncryptableDbAttribute
         }
 
         // decrypt value before casts
-        if (in_array($key, $this->encryptable)) {
+        if (in_array($key, $this->encryptable) && !is_null($value) && $value !== '') {
             $value = $this->decrypt($value);
         }
 
