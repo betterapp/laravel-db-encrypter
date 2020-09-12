@@ -3,7 +3,8 @@
 This package was created to encrypt and decrypt values of Eloquent model attributes.
 
 ## Donnations
-If You think this package hellped You, please donate.
+If You think this package helped You, please donate. Thank You.
+
 https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPYLWZ8Y5E4JE&source=url
 
 ## Key features
