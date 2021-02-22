@@ -64,6 +64,10 @@ trait EncryptableDbAttribute
             return parent::setAttribute($key, $value);
         }
 
+        if ($this->isJsonCastable($key) && !is_null($value)) {
+            $value = $this->castAttributeAsJson($key, $value);
+        }
+
         $value = $this->encrypt($value);
 
         return parent::setAttribute($key, $value);
