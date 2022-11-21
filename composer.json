@@ -32,14 +32,14 @@
   "authors": [
     {
       "name": "Daniel Czestki",
-      "email": "daniel@betterapp.net",
+      "email": "biuro@betterapp.net",
       "homepage": "https://github.com/betterapp",
       "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=7.1",
-    "laravel/framework": "^6.0|^7.0|^8.0"
+    "php": ">=8.0",
+    "laravel/framework": "^9.0"
   },
   "minimum-stability": "stable"
 }
