@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Crypt;
 
 /**
  * Trait EncryptableDbAttribute
- * @package betterApp\LaravelDbEncrypter\Traits
  */
 trait EncryptableDbAttribute
 {
@@ -24,7 +23,7 @@ trait EncryptableDbAttribute
         }
 
         // decrypt value before casts
-        if (!is_null($value) && $value !== '' && in_array($key, $this->encryptable)) {
+        if (! is_null($value) && $value !== '' && in_array($key, $this->encryptable)) {
             $value = $this->decrypt($value);
         }
 
@@ -145,14 +144,10 @@ trait EncryptableDbAttribute
         return $attributes;
     }
 
-    /**
-     * @param array $attributes
-     * @return array
-     */
     private function decryptAttributes(array $attributes): array
     {
         foreach ($attributes as $key => $value) {
-            if (!in_array($key, $this->encryptable) || is_null($value) || $value === '') {
+            if (! in_array($key, $this->encryptable) || is_null($value) || $value === '') {
                 continue;
             }
 
@@ -163,29 +158,29 @@ trait EncryptableDbAttribute
     }
 
     /**
-     * @param mixed $value
-     *
+     * @param  mixed  $value
      * @return mixed
      */
     private function encrypt($value)
     {
         try {
             $value = Crypt::encrypt($value);
-        } catch (EncryptException $e) {}
+        } catch (EncryptException $e) {
+        }
 
         return $value;
     }
 
     /**
-     * @param mixed $value
-     *
+     * @param  mixed  $value
      * @return mixed
      */
     private function decrypt($value)
     {
         try {
             $value = Crypt::decrypt($value);
-        } catch (DecryptException $e) {}
+        } catch (DecryptException $e) {
+        }
 
         return $value;
     }
