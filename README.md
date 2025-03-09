@@ -8,9 +8,20 @@ This package was created to encrypt and decrypt values of Eloquent model attribu
 * Using standard Laravel's Crypt service
 * Easy configuration
 
+## Installation
+
+| Command                                             | Laravel |
+|-----------------------------------------------------|---------|
+| composer install betterapp/laravel-db-encrypter:^v5 | 12     |
+| composer install betterapp/laravel-db-encrypter:^v4 | 11     |
+| composer install betterapp/laravel-db-encrypter:^v3 | 10     |
+| composer install betterapp/laravel-db-encrypter:^v2 | 9      |
+| composer install betterapp/laravel-db-encrypter:^v1 | 6, 7, 8 |
+
+
 ## Requirements
 
-* Laravel: 6.0 and up
+* Laravel: ^6.0, ^7.0, ^8.0
 * PHP: 7.1 and newer
 
 #### Database schema
@@ -20,7 +31,7 @@ Recommendation is to alter table column to `TEXT` type.
 If you want use `VARCHAR` or `CHAR` column type still you need to check if encrypted value fit.
 
 #### Note:
-Do not worry if you have current data in your database not encrypted and added column to `$encryptable`  - they will return as is.    
+Do not worry if you have current data in your database not encrypted and added column to `$encryptable`  - they will return as is.
 On save values will be encrypted and everything will work fine.
 
 ## Installation
@@ -39,15 +50,15 @@ $ composer require betterapp/laravel-db-encrypter
 For example:
 
 ```php
-    
+
     use betterapp\LaravelDbEncrypter\Traits\EncryptableDbAttribute;
 
     class Client extends Eloquent {
         use EncryptableDbAttribute;
-       
+
         /** @var array The attributes that should be encrypted/decrypted */
         protected $encryptable = [
-            'id_number', 
+            'id_number',
             'email',
         ];
     }
