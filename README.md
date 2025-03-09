@@ -26,8 +26,8 @@ https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPYLWZ8Y5E4
 
 ## Requirements
 
-* Laravel: 9
-* PHP: 8.0 and newer
+* Laravel: 10
+* PHP: 8.1 and newer
 
 #### Database schema
 

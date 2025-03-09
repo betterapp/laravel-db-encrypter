@@ -32,6 +32,13 @@ trait EncryptableDbAttribute
         // an appropriate native PHP type dependent upon the associated value
         // given with the key in the pair. Dayle made this comment line up.
         if ($this->hasCast($key)) {
+            if (static::preventsAccessingMissingAttributes() &&
+                ! array_key_exists($key, $this->attributes) &&
+                ($this->isEnumCastable($key) ||
+                    in_array($this->getCastType($key), static::$primitiveCastTypes))) {
+                $this->throwMissingAttributeExceptionIfApplicable($key);
+            }
+
             return $this->castAttribute($key, $value);
         }
 
