@@ -13,10 +13,21 @@ https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SPYLWZ8Y5E4
 * Using standard Laravel's Crypt service
 * Easy configuration
 
+## Installation
+
+| Command                                             | Laravel |
+|-----------------------------------------------------|---------|
+| composer install betterapp/laravel-db-encrypter:^v5 | 12     |
+| composer install betterapp/laravel-db-encrypter:^v4 | 11     |
+| composer install betterapp/laravel-db-encrypter:^v3 | 10     |
+| composer install betterapp/laravel-db-encrypter:^v2 | 9      |
+| composer install betterapp/laravel-db-encrypter:^v1 | 6, 7, 8 |
+
+
 ## Requirements
 
-* Laravel: 6.0 and up
-* PHP: 7.1 and newer
+* Laravel: 9
+* PHP: 8.0 and newer
 
 #### Database schema
 
