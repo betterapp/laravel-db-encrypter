@@ -105,6 +105,10 @@ trait EncryptableDbAttribute
             $value = $this->castAttributeAsEncryptedString($key, $value);
         }
 
+        if (! is_null($value) && $this->hasCast($key, 'hashed')) {
+            $value = $this->castAttributeAsHashedString($key, $value);
+        }
+
         if (! is_null($value) && in_array($key, $this->encryptable)) {
             $value = $this->encrypt($value);
         }
